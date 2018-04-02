@@ -1,5 +1,16 @@
-#' @importFrom dplyr case_when
+#' Base R6 Actor Class
+#'
+#' This [R6 class][R6::R6Class()] is a constructor for all Actor subclasses. Also
+#' documented here are various related R objects, like a list of possible
+#' starting classes (Which means you need to document better!)
+#'
+#' @name actor_classes
 
+#' @rdname actor_classes
+#' @export
+starting_classes <- list("warrior", "mage", "rogue")
+
+#' @rdname actor_classes
 #' @export
 Actor <- R6::R6Class(
   "Actor",
@@ -8,10 +19,6 @@ Actor <- R6::R6Class(
     name = NULL,
     actor_class = NULL,
     params = list(hp = NULL, mp = NULL, str = NULL, skl = NULL),
-    # hp = NULL,
-    # mp = NULL,
-    # str = NULL,
-    # skl = NULL,
     initialize = function(name, actor_class) {
       self$name <- name
       actor_class <- tolower(actor_class)
