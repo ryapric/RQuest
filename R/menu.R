@@ -13,5 +13,5 @@ help <- function() {
 #' @rdname main_menu
 #' @export
 start_quest <- function() {
-  source(system.file("start_quest.R", package = "RQuest", mustWork = TRUE))
+  source(system.file("quest.R", package = "RQuest", mustWork = TRUE))
 }

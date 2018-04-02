@@ -4,17 +4,9 @@
 #' documented here are various related R objects, like a list of possible
 #' starting classes (Which means you need to document better!)
 #'
-#' @name actor_classes
-
-#' @rdname actor_classes
-#' @export
-starting_classes <- list("warrior", "mage", "rogue")
-
-#' @rdname actor_classes
 #' @export
 Actor <- R6::R6Class(
   "Actor",
-  lock_objects = FALSE,
   public = list(
     name = NULL,
     actor_class = NULL,
@@ -33,3 +25,12 @@ Actor <- R6::R6Class(
     }
   )
 )
+
+
+
+#' Player Classes
+#'
+#' A list of possible player starting classes.
+#'
+#' @export
+player_classes <- list("warrior", "mage", "rogue")

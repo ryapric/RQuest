@@ -2,6 +2,6 @@
 
 export(Actor)
 export(help)
+export(player_classes)
 export(start_quest)
-export(starting_classes)
 importFrom(dplyr,case_when)
