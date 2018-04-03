@@ -8,10 +8,10 @@ while (TRUE) {
 
   res <- readline("What will you do? ")
   if (res == "attack") {
-    attack(player, villain)
+    player$attack(villain)
   } else if (res == "heal") {
-    heal(player, player)
+    player$heal(player)
   }
-  attack(villain, player)
+  villain$attack(player)
 
 }

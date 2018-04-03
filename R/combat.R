@@ -6,16 +6,19 @@
 #' @param attacker [Actor]-class or subclass instance that is attacking
 #' @param target [Actor]-class or subclass that is the target of the attack
 attack <- function(attacker, target) {
-  dmg <- (attacker$params$str * 5)
-  target$params$hp <- (target$params$hp - dmg)
-  cat(sprintf("%s dealt %d damage to %s!\n", attacker$name, dmg, target$name))
-  Sys.sleep(1)
-  if (target$params$hp <= 0) {
-    cat(sprintf("%s was defeated!\n", target$name))
-    break
-  } else {
-    cat(sprintf("%s has %d HP remaining\n", target$name, target$params$hp))
+  while (target$params$hp > 0) {
+    dmg <- (attacker$params$str * 5)
+    target$params$hp <- (target$params$hp - dmg)
+    cat(sprintf("%s dealt %d damage to %s!\n", attacker$name, dmg, target$name))
     Sys.sleep(1)
+    if (target$params$hp > 0) {
+      cat(sprintf("%s has %d HP remaining\n", target$name, target$params$hp))
+      Sys.sleep(1)
+    } else {
+      cat(sprintf("%s was defeated!\n", target$name))
+      Sys.sleep(1)
+      break
+    }
   }
 }
 
@@ -32,4 +35,5 @@ heal <- function(caster, target) {
   cat(sprintf("%s healed %s for %d!\n", caster$name, target$name, hp_healed))
   Sys.sleep(1)
   cat(sprintf("%s has %d HP left\n", target$name, target$params$hp))
+  Sys.sleep(1)
 }
