@@ -9,8 +9,12 @@
 Actor
 }
 \description{
-This \link[R6:R6Class]{R6 class} is a constructor for all Actor subclasses. Also
-documented here are various related R objects, like a list of possible
-starting classes (Which means you need to document better!)
+This \link[R6:R6Class]{R6 class} is a constructor for all Actor subclasses.
+Objects are instantiated with the following methods:
+\itemize{
+\item A list of \emph{character parameters} (\code{params})
+\item A method for attacking another object (\code{\link[=attack]{attack()}})
+\item A method for healing another object (\code{\link[=heal]{heal()}})
+}
 }
 \keyword{datasets}

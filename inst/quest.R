@@ -1,12 +1,18 @@
 library(RQuest)
 
+# INSTANTIATE ALL OF THE THINGS
+player$heal(player)
+
+villain$attack(player)
+
 while (TRUE) {
 
-  res <- tolower(readline("Choose a starting class: "))
-  if (res %in% player_classes) {
-    print(paste0("You chose: ", res))
-    player <- Actor$new("Steve", res)
-    print(player)
+  res <- readline("What will you do? ")
+  if (res == "attack") {
+    attack(player, villain)
+  } else if (res == "heal") {
+    heal(player, player)
   }
+  attack(villain, player)
 
 }
