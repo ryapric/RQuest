@@ -1,9 +1,8 @@
 library(RQuest)
 
 # INSTANTIATE ALL OF THE THINGS
-player$heal(player)
-
-villain$attack(player)
+player <- Actor$new("Steve", "warrior")
+villain <- Actor$new("Grunt", "warrior")
 
 while (TRUE) {
 
