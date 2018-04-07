@@ -1,17 +1,21 @@
 library(RQuest)
 
 # INSTANTIATE ALL OF THE THINGS
-player <- Actor$new("Steve", "warrior")
-villain <- Actor$new("Grunt", "warrior")
+player <- Player$new("Steve", "warrior")
+villain <- Villain$new("Grunt", "warrior")
 
-while (TRUE) {
+player$attack(villain)
 
-  res <- readline("What will you do? ")
-  if (res == "attack") {
-    player$attack(villain)
-  } else if (res == "heal") {
-    player$heal(player)
-  }
-  villain$attack(player)
+stage_1()
 
-}
+# while (TRUE) {
+#
+#   res <- readline("What will you do? ")
+#   if (res == "attack") {
+#     player$attack(villain)
+#   } else if (res == "heal") {
+#     player$heal(player)
+#   }
+#   villain$attack(player)
+#
+# }

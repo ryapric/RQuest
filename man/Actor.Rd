@@ -13,8 +13,8 @@ This \link[R6:R6Class]{R6 class} is a constructor for all Actor subclasses.
 Objects are instantiated with the following methods:
 \itemize{
 \item A list of \emph{character parameters} (\code{params})
-\item A method for attacking another object (\code{\link[=attack]{attack()}})
-\item A method for healing another object (\code{\link[=heal]{heal()}})
+\item A method for \link[=attack_]{attacking} another object
+\item A method for \link[=heal_]{healing} another object
 }
 }
 \keyword{datasets}
